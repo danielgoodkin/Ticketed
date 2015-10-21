@@ -1,6 +1,10 @@
 require "rails_helper"
 
 RSpec.feature "Users can delete projects" do
+	before do
+		login_as(FactoryGirl.create(:user, :admin))
+	end
+
 	scenario "successfuly" do
 		FactoryGirl.create(:project, name: "Sublime Text 3")
 
@@ -13,4 +17,3 @@ RSpec.feature "Users can delete projects" do
 		expect(page).to have_no_content "Sublime Text 3"
 	end
 end
-
