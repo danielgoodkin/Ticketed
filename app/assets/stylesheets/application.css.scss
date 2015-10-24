@@ -5,6 +5,8 @@
 @import "tickets";
 @import "responsive";
 @import "admin/application";
+@import "admin/users";
+@import "responsive";
 
 header {
 	@extend .page-header;
